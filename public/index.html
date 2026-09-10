@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Candidate Search — Internal Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="app-header">
+    <h1>Candidate Search</h1>
+    <div class="tooling-controls">
+      <a id="specLink" href="/spec" target="_blank" title="Tooling: view app spec (not part of the app)">📋 Spec</a>
+      <a id="apiCollectionLink" href="/openapi.json" target="_blank" title="Tooling: OpenAPI collection (not part of the app)">📥 API collection</a>
+      <button type="button" id="resetBtn" title="Tooling: resets sample data (not part of the app)">↺ Reset data</button>
+    </div>
+  </div>
+
+  <div id="app-section">
+    <div class="toolbar">
+      <input id="q" type="text" placeholder="Search by name or email...">
+      <button id="searchBtn">Search</button>
+      <span id="resultCount" class="count"></span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th data-field="name">Name <span class="arrow" data-arrow="name"></span></th>
+          <th data-field="email">Email <span class="arrow" data-arrow="email"></span></th>
+          <th data-field="status">Status <span class="arrow" data-arrow="status"></span></th>
+          <th data-field="createdAt">Created On <span class="arrow" data-arrow="createdAt"></span></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+
+    <div class="pager">
+      <button id="prevBtn">&laquo; Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextBtn">Next &raquo;</button>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+<script>window.SV_APP_ID='13';window.SV_SCOREBOARD='https://sv-qa-scoreboard.onrender.com';</script>
+<script src="report-widget.js"></script>
+</body>
+</html>
